@@ -2,16 +2,13 @@
 # Section:  IV-BSIT A
 
 
-# students  (list) - names as typed, e.g. "Juan Cruz"  -> used for display and search
-# name_keys (set)  - lowercase names, e.g. "juan cruz" -> used to block duplicates
-
 # add function
 def add_student(students, name_keys):
     name = input("Enter student name: ").strip()
     if name == "":
         print("Name cannot be blank.")
         return
-    key = name.lower()                 # "Juan Cruz" and "juan cruz" become the same
+    key = name.lower()                 
     if key in name_keys:
         print(f"'{name}' is already in the list.")
     else:
@@ -36,7 +33,7 @@ def remove_student(students, name_keys):
 #search function
 def search_students(students):
     query = input("Search name: ").strip().lower()
-    matches = [s for s in students if query in s.lower()]   # partial match
+    matches = [s for s in students if query in s.lower()]  
     if matches:
         print(f"Found {len(matches)} match(es):")
         for name in matches:
@@ -59,7 +56,7 @@ def main():
     students = []
     name_keys = set()
     while True:
-        print("\n=== Student Record Manager - Your Name ===")
+        print("\n=== Student Record Manager ===")
         print("[1] Add student")
         print("[2] Remove student")
         print("[3] Search student")
